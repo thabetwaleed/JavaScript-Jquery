@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.orange{
+    color: orange;
+    font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+
+
+    <div id="box" style="width: 100px; height: 100px; background-color:brown; position:sticky;">
+
+    </div>
+
+    <select id="ComboColors" onchange="changeColor()">
+        <option value="Red" class="adc">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Black">Black</option>
+    </select>
+    <br/>
+   <p class="orange yn">
+    enter your name:
+   </p>
+    <input type="text" id="txtName"  />
+    <input type="button" value="Click Here" onclick="showMessage()"/>
+    <br/>
+    <br/>
+
+    enter your age:
+    <input type="text" class="textfield" value="" id="extra7" name="extra7" onkeypress="return isNumber(event)" />
+    <input type="button" value="Validate" id="tst"/>
+
+    <br>    <br>
+
+    <input type="text" id="txt"/>
+    <br>
+
+    <p class="jq">This is a test for Jquery</p>
+
+    <p class="jq4">This is a test for Jquery</p>
+
+    <script src="jquery-3.6.1.min.js" ></script>
+    <script>
+        $(document).ready(function(){
+
+            // $("#txt").focus(function(){
+
+            //     $(this).css("background-color","green");
+            // });
+
+            // $("#txt").blur(function(){
+
+            // $(this).css("background-color","red");
+            // });
+                //or
+
+                $("#txt").on({
+                    focus:function(){
+                        $(this).css("background-color","green");
+                    },
+                    blur:function(){
+                        $(this).css("background-color","red");      
+                    }
+                });
+
+
+
+            $(".jq").click(function(){
+                    $(".jq").addClass("orange");
+            });
+
+            $(".yn").click(function(){
+                $(".yn").removeClass("orange");
+            });
+
+            // $("#ComboColors").click(function(){
+            //    $("#ComboColors").css("font-size","20px"); 
+            // });
+
+            $("#ComboColors").click(function(){
+               $("#ComboColors").css(
+                {
+                "font-size":"20px",
+                "color":"red"
+            }); 
+            });
+
+        $("#txtName").click(function(){
+        $("#txtName").hide();
+        });
+
+        $("#tst").click(function(){
+
+            $("#extra7").fadeTo("slow",0.6);
+        });
+
+        $("div").click(function(){
+            $("div").animate({
+                "left":"+=150px",
+                "opacity":"-=0.1"
+            });
+        });
+       });
+    </script>
+    <script src="test.js"></script>
+</body>
+</html>
